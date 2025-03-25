@@ -1,2 +1,31 @@
 
 /* Custom styles for Ifthar Gathering */
+
+.coordinator-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(212, 175, 55, 0.15);
+}
+
+.coordinator-quote {
+  position: relative;
+}
+
+.coordinator-quote:before,
+.coordinator-quote:after {
+  content: '"';
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #d4af37;
+  opacity: 0.3;
+  position: absolute;
+}
+
+.coordinator-quote:before {
+  top: -10px;
+  left: -15px;
+}
+
+.coordinator-quote:after {
+  bottom: -30px;
+  right: -15px;
+}

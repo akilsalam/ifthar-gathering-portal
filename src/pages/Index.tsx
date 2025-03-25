@@ -6,6 +6,7 @@ import AboutSection from '@/components/AboutSection';
 import ScheduleSection from '@/components/ScheduleSection';
 import LocationSection from '@/components/LocationSection';
 import RSVPSection from '@/components/RSVPSection';
+import CoordinatorsSection from '@/components/CoordinatorsSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -39,6 +40,7 @@ const Index = () => {
         <Hero />
         <AboutSection />
         <ScheduleSection />
+        <CoordinatorsSection />
         <LocationSection />
         <RSVPSection />
       </main>
