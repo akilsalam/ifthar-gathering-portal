@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Sparkles, Star } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Sparkles, Star, Code, Database, Cpu, Coffee } from 'lucide-react';
 
 const CoordinatorsSection: React.FC = () => {
   return (
@@ -19,40 +19,69 @@ const CoordinatorsSection: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Coordinator 1 */}
-          <div className="fade-in-section glass-card p-6 rounded-xl text-center flex flex-col items-center">
+          <div className="fade-in-section coordinator-card group glass-card p-6 rounded-xl text-center flex flex-col items-center transition-all duration-300">
             <div className="relative mb-4">
-              <Avatar className="h-24 w-24 border-4 border-iftar-gold">
+              <Avatar className="h-32 w-32 border-4 border-iftar-gold">
+                <AvatarImage src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Muhammed Anshid" />
                 <AvatarFallback className="bg-iftar-gold text-white text-2xl">MA</AvatarFallback>
               </Avatar>
               <Sparkles className="absolute -top-2 -right-2 text-iftar-gold h-6 w-6" />
+              <div className="absolute -bottom-2 -left-2 bg-white rounded-full p-1 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <Code className="h-5 w-5 text-iftar-gold" />
+              </div>
             </div>
             <h4 className="text-xl font-serif font-semibold text-iftar-navy mb-1">Muhammed Anshid</h4>
             <p className="text-iftar-navy/70 mb-3 text-sm italic">"React whisperer & kebab connoisseur"</p>
             <p className="text-iftar-navy/80 text-sm">
               When not creating pixel-perfect UIs, Anshid can be found explaining why everything should be a React component—even the food menu!
             </p>
+            <div className="mt-4 pt-4 border-t border-iftar-gold/20 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p className="text-xs text-iftar-navy/60 italic">
+                "My code is like my fasting: clean, disciplined, and occasionally interrupted by unexpected bugs."
+              </p>
+            </div>
           </div>
 
           {/* Coordinator 2 */}
-          <div className="fade-in-section glass-card p-6 rounded-xl text-center flex flex-col items-center" style={{ transitionDelay: '0.2s' }}>
+          <div className="fade-in-section coordinator-card group glass-card p-6 rounded-xl text-center flex flex-col items-center transition-all duration-300" style={{ transitionDelay: '0.2s' }}>
             <div className="relative mb-4">
-              <Avatar className="h-24 w-24 border-4 border-iftar-gold">
+              <Avatar className="h-32 w-32 border-4 border-iftar-gold">
+                <AvatarImage src="https://images.unsplash.com/photo-1607990283143-e81e7a2c9349?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Muhammed Munawwir" />
                 <AvatarFallback className="bg-iftar-gold text-white text-2xl">MM</AvatarFallback>
               </Avatar>
               <Star className="absolute -top-2 -right-2 text-iftar-gold h-6 w-6" />
+              <div className="absolute -bottom-2 -left-2 bg-white rounded-full p-1 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <Database className="h-5 w-5 text-iftar-gold" />
+              </div>
             </div>
             <h4 className="text-xl font-serif font-semibold text-iftar-navy mb-1">Muhammed Munawwir</h4>
             <p className="text-iftar-navy/70 mb-3 text-sm italic">"MongoDB master & samosa specialist"</p>
             <p className="text-iftar-navy/80 text-sm">
               Munawwir ensures our backend runs as smoothly as the Ifthar buffet line. He optimizes databases by day and dessert selections by night.
             </p>
+            <div className="mt-4 pt-4 border-t border-iftar-gold/20 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p className="text-xs text-iftar-navy/60 italic">
+                "My queries are fast, but not as fast as I'll be running to the food table when it's time to break fast."
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="text-center mt-12 fade-in-section" style={{ transitionDelay: '0.4s' }}>
-          <p className="text-iftar-navy/60 text-sm italic max-w-2xl mx-auto">
-            "We promise the food will have fewer bugs than our code. Come hungry, leave with full stomachs and fewer merge conflicts!"
-          </p>
+        <div className="relative mt-16 fade-in-section p-6 glass-card rounded-xl max-w-3xl mx-auto" style={{ transitionDelay: '0.4s' }}>
+          <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-iftar-cream p-2 rounded-full shadow-lg">
+            <div className="bg-iftar-gold rounded-full p-3">
+              <Coffee className="w-6 h-6 text-white" />
+            </div>
+          </div>
+          <div className="coordinator-quote text-center">
+            <p className="text-iftar-navy/80 text-lg italic font-serif max-w-2xl mx-auto">
+              "We promise the food will have fewer bugs than our code. Come hungry, leave with full stomachs and fewer merge conflicts!"
+            </p>
+            <div className="mt-6 flex items-center justify-center gap-3">
+              <Cpu className="w-5 h-5 text-iftar-gold animate-pulse" />
+              <p className="text-sm text-iftar-navy/70 italic">Tech Department Interns, who spend more time deciding on dinner than debugging.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
