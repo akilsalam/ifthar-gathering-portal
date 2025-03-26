@@ -2,9 +2,16 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { Menu, X } from 'lucide-react';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +23,7 @@ const Header: React.FC = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
+    setIsOpen(false);
     const element = document.getElementById(id);
     if (element) {
       window.scrollTo({
@@ -67,13 +75,64 @@ const Header: React.FC = () => {
           </Button>
         </nav>
 
-        <Button
-          onClick={() => scrollToSection('rsvp')}
-          className="md:hidden bg-iftar-gold text-white hover:bg-iftar-deep-gold"
-          size="sm"
-        >
-          RSVP
-        </Button>
+        {/* Mobile Menu */}
+        <div className="md:hidden">
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="h-10 w-10 text-iftar-navy">
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[250px] sm:w-[300px] bg-white">
+              <div className="flex flex-col h-full py-6">
+                <div className="flex items-center justify-between mb-8">
+                  <span className="text-xl font-serif font-semibold text-iftar-navy">
+                    Ifthar <span className="gold-shimmer">2025</span>
+                  </span>
+                </div>
+                <nav className="flex flex-col space-y-5">
+                  <button
+                    onClick={() => scrollToSection('about')}
+                    className="text-iftar-navy hover:text-iftar-gold transition-colors text-left font-medium py-2"
+                  >
+                    About
+                  </button>
+                  <button
+                    onClick={() => scrollToSection('schedule')}
+                    className="text-iftar-navy hover:text-iftar-gold transition-colors text-left font-medium py-2"
+                  >
+                    Schedule
+                  </button>
+                  <button
+                    onClick={() => scrollToSection('coordinators')}
+                    className="text-iftar-navy hover:text-iftar-gold transition-colors text-left font-medium py-2"
+                  >
+                    Team
+                  </button>
+                  <button
+                    onClick={() => scrollToSection('location')}
+                    className="text-iftar-navy hover:text-iftar-gold transition-colors text-left font-medium py-2"
+                  >
+                    Location
+                  </button>
+                  <button
+                    onClick={() => scrollToSection('mern-quiz')}
+                    className="text-iftar-navy hover:text-iftar-gold transition-colors text-left font-medium py-2"
+                  >
+                    MERN Quiz
+                  </button>
+                  <Button
+                    onClick={() => scrollToSection('rsvp')}
+                    className="mt-4 w-full bg-iftar-gold text-white hover:bg-iftar-deep-gold"
+                  >
+                    RSVP Now
+                  </Button>
+                </nav>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </header>
   );

@@ -34,6 +34,18 @@ const Index = () => {
     };
   }, []);
 
+  // Add meta viewport tag to ensure proper scaling on mobile
+  useEffect(() => {
+    const meta = document.createElement('meta');
+    meta.name = 'viewport';
+    meta.content = 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no';
+    document.head.appendChild(meta);
+
+    return () => {
+      document.head.removeChild(meta);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Header />

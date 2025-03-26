@@ -80,19 +80,19 @@ const RSVPSection: React.FC = () => {
   };
 
   return (
-    <section id="rsvp" ref={sectionRef} className="py-20 px-6 bg-iftar-dark-cream">
+    <section id="rsvp" ref={sectionRef} className="py-16 md:py-20 px-4 md:px-6 bg-iftar-dark-cream">
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center mb-12 fade-in-section">
-          <h2 className="text-sm font-medium text-iftar-gold mb-4 uppercase tracking-wider">Join Us</h2>
-          <h3 className="text-3xl md:text-4xl font-serif font-semibold mb-6 text-iftar-navy">
+        <div className="text-center mb-8 md:mb-12 fade-in-section">
+          <h2 className="text-sm font-medium text-iftar-gold mb-3 md:mb-4 uppercase tracking-wider">Join Us</h2>
+          <h3 className="text-2xl md:text-4xl font-serif font-semibold mb-4 md:mb-6 text-iftar-navy">
             Reserve Your Place
           </h3>
-          <p className="text-iftar-navy/80 max-w-2xl mx-auto">
+          <p className="text-iftar-navy/80 max-w-2xl mx-auto text-sm md:text-base">
             Please let us know if you'll be joining us for the Ifthar gathering. Your RSVP helps us prepare accordingly.
           </p>
         </div>
 
-        <div className="max-w-xl mx-auto">
+        <div className="max-w-xl mx-auto px-2 md:px-0">
           {showEligibilityMessage && (
             <Alert variant="destructive" className="mb-6 fade-in-section">
               <XCircle className="h-4 w-4" />
@@ -106,12 +106,12 @@ const RSVPSection: React.FC = () => {
           <form 
             ref={formRef}
             onSubmit={handleSubmit} 
-            className="glass-card p-8 rounded-xl fade-in-section"
+            className="glass-card p-5 md:p-8 rounded-xl fade-in-section"
           >
-            <div className="space-y-6">
-              <div className="grid grid-cols-1 gap-4">
+            <div className="space-y-4 md:space-y-6">
+              <div className="grid grid-cols-1 gap-3 md:gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="name" className="text-iftar-navy">Full Name *</Label>
+                  <Label htmlFor="name" className="text-iftar-navy text-sm md:text-base">Full Name *</Label>
                   <Input
                     id="name"
                     value={name}
@@ -123,7 +123,7 @@ const RSVPSection: React.FC = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-iftar-navy">Email Address *</Label>
+                  <Label htmlFor="email" className="text-iftar-navy text-sm md:text-base">Email Address *</Label>
                   <Input
                     id="email"
                     type="email"
@@ -136,7 +136,7 @@ const RSVPSection: React.FC = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="department" className="text-iftar-navy">Team/Department</Label>
+                  <Label htmlFor="department" className="text-iftar-navy text-sm md:text-base">Team/Department</Label>
                   <Input
                     id="department"
                     value={department}
@@ -146,22 +146,22 @@ const RSVPSection: React.FC = () => {
                   />
                 </div>
 
-                <div className="space-y-3">
-                  <Label className="text-iftar-navy">Will you be attending?</Label>
-                  <RadioGroup value={attending} onValueChange={setAttending} className="flex space-x-4">
+                <div className="space-y-2 md:space-y-3">
+                  <Label className="text-iftar-navy text-sm md:text-base">Will you be attending?</Label>
+                  <RadioGroup value={attending} onValueChange={setAttending} className="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-4">
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="yes" id="attending-yes" className="text-iftar-gold" />
-                      <Label htmlFor="attending-yes" className="text-iftar-navy/80 font-normal cursor-pointer">Yes, I'll be there</Label>
+                      <Label htmlFor="attending-yes" className="text-iftar-navy/80 font-normal cursor-pointer text-sm md:text-base">Yes, I'll be there</Label>
                     </div>
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="no" id="attending-no" className="text-iftar-gold" />
-                      <Label htmlFor="attending-no" className="text-iftar-navy/80 font-normal cursor-pointer">Unable to attend</Label>
+                      <Label htmlFor="attending-no" className="text-iftar-navy/80 font-normal cursor-pointer text-sm md:text-base">Unable to attend</Label>
                     </div>
                   </RadioGroup>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="dietary" className="text-iftar-navy">Dietary Restrictions/Preferences</Label>
+                  <Label htmlFor="dietary" className="text-iftar-navy text-sm md:text-base">Dietary Restrictions/Preferences</Label>
                   <Input
                     id="dietary"
                     value={dietaryRestrictions}
@@ -174,13 +174,13 @@ const RSVPSection: React.FC = () => {
 
               <Button 
                 type="submit" 
-                className="w-full bg-iftar-gold hover:bg-iftar-deep-gold text-white transition-all duration-300 py-6"
+                className="w-full bg-iftar-gold hover:bg-iftar-deep-gold text-white transition-all duration-300 py-5 md:py-6 text-sm md:text-base"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Submitting..." : "Submit RSVP"}
               </Button>
               
-              <p className="text-xs text-center text-iftar-navy/60 mt-4">
+              <p className="text-xs text-center text-iftar-navy/60 mt-3 md:mt-4">
                 * Required fields. Your information will only be used for event planning purposes.
               </p>
             </div>
