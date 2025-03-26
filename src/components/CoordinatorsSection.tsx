@@ -22,7 +22,7 @@ const CoordinatorsSection: React.FC = () => {
           <div className="fade-in-section coordinator-card group glass-card p-6 rounded-xl text-center flex flex-col items-center transition-all duration-300">
             <div className="relative mb-4">
               <Avatar className="h-32 w-32 border-4 border-iftar-gold">
-                <AvatarImage src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Muhammed Anshid" />
+                <AvatarImage src="/lovable-uploads/a02496b2-0319-478a-ac8c-7292108f0407.png" alt="Muhammed Anshid" />
                 <AvatarFallback className="bg-iftar-gold text-white text-2xl">MA</AvatarFallback>
               </Avatar>
               <Sparkles className="absolute -top-2 -right-2 text-iftar-gold h-6 w-6" />
