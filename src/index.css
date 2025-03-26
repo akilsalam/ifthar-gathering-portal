@@ -112,6 +112,43 @@
     animation: float-reverse 7s ease-in-out infinite;
   }
 
+  /* Shimmer animation */
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  /* Animation for fadeIn, slideUp */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  .animate-slideUp {
+    animation: slideUp 1s ease-out forwards;
+  }
+
+  /* Extra small text */
+  .text-2xs {
+    font-size: 0.625rem;
+    line-height: 1rem;
+  }
+
   /* Mobile-specific styles */
   @media (max-width: 768px) {
     h1 {
@@ -129,19 +166,19 @@
     }
 
     .glass-card {
-      padding: 1.25rem;
+      padding: 1rem;
     }
 
     /* Improve touch targets for mobile */
     button, a {
-      min-height: 44px;
-      min-width: 44px;
+      min-height: 40px;
+      min-width: 40px;
     }
 
     /* Adjust spacing for mobile */
     .space-y-6 {
-      margin-top: 1.25rem;
-      margin-bottom: 1.25rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
     }
 
     /* Full-width containers on mobile */
@@ -149,6 +186,24 @@
       width: 100%;
       padding-left: 1rem;
       padding-right: 1rem;
+    }
+
+    /* Better tap targets */
+    .form-inputs label,
+    .form-inputs input,
+    .radio-option {
+      margin-bottom: 0.75rem;
+    }
+
+    /* Responsive paddings */
+    .py-20 {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    /* Fix grid layouts */
+    .grid-cols-2 {
+      grid-template-columns: 1fr;
     }
   }
 }

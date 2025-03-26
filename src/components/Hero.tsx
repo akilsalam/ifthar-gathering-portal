@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { Calendar, UtensilsCrossed, Pizza, Coffee } from 'lucide-react';
+import { Calendar, UtensilsCrossed, Pizza, Coffee, Drumstick, Laugh } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -39,14 +39,16 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen relative flex flex-col items-center justify-center pt-20 pb-10 px-6 overflow-hidden">
+    <div className="min-h-screen relative flex flex-col items-center justify-center pt-20 pb-10 px-4 md:px-6 overflow-hidden">
       <div className="absolute inset-0 bg-iftar-light-gold opacity-50 pointer-events-none"></div>
       
-      {/* Floating food icons */}
+      {/* Floating food icons with more items and animations */}
       <div className="absolute w-full h-full overflow-hidden pointer-events-none">
-        <UtensilsCrossed className="absolute text-iftar-gold/30 w-24 h-24 top-[15%] left-[10%] animate-float" style={{ animationDelay: '0.5s' }} />
-        <Pizza className="absolute text-iftar-gold/30 w-20 h-20 bottom-[20%] right-[15%] animate-float" style={{ animationDelay: '1.2s' }} />
-        <Coffee className="absolute text-iftar-gold/30 w-16 h-16 top-[25%] right-[20%] animate-float" style={{ animationDelay: '0.8s' }} />
+        <UtensilsCrossed className="absolute text-iftar-gold/30 w-16 md:w-24 h-16 md:h-24 top-[15%] left-[10%] animate-float" style={{ animationDelay: '0.5s' }} />
+        <Pizza className="absolute text-iftar-gold/30 w-14 md:w-20 h-14 md:h-20 bottom-[20%] right-[15%] animate-float" style={{ animationDelay: '1.2s' }} />
+        <Coffee className="absolute text-iftar-gold/30 w-12 md:w-16 h-12 md:h-16 top-[25%] right-[20%] animate-float" style={{ animationDelay: '0.8s' }} />
+        <Drumstick className="absolute text-iftar-gold/30 w-12 md:w-18 h-12 md:h-18 bottom-[30%] left-[25%] animate-float-reverse" style={{ animationDelay: '1.5s' }} />
+        <Laugh className="absolute text-iftar-gold/30 w-10 md:w-14 h-10 md:h-14 top-[40%] left-[30%] animate-float" style={{ animationDelay: '1.7s' }} />
       </div>
       
       <div 
@@ -56,48 +58,52 @@ const Hero: React.FC = () => {
           transform: 'translate(calc(var(--move-x, 0) * 0.5), calc(var(--move-y, 0) * 0.5))',
         }}
       >
-        <div className="mb-8 inline-block opacity-0 animate-slideUp" style={{ animationDelay: '0.3s' }}>
-          <span className="px-4 py-2 rounded-full bg-iftar-cream border border-iftar-gold/30 text-iftar-navy inline-flex items-center text-sm font-medium">
-            <Calendar className="w-4 h-4 mr-2 text-iftar-gold" />
+        <div className="mb-6 md:mb-8 inline-block opacity-0 animate-slideUp" style={{ animationDelay: '0.3s' }}>
+          <span className="px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-iftar-cream border border-iftar-gold/30 text-iftar-navy inline-flex items-center text-xs md:text-sm font-medium">
+            <Calendar className="w-3 h-3 md:w-4 md:h-4 mr-1.5 md:mr-2 text-iftar-gold" />
             <time dateTime="2025-03-26">March 26, 2025</time>
           </span>
         </div>
         
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-semibold mb-6 tracking-tight text-iftar-navy opacity-0 animate-slideUp" style={{ animationDelay: '0.6s' }}>
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-semibold mb-4 md:mb-6 tracking-tight text-iftar-navy opacity-0 animate-slideUp" style={{ animationDelay: '0.6s' }}>
           Technology Department <br />
           <span className="gold-shimmer">Ifthar Gathering</span>
         </h1>
         
-        <p className="text-lg md:text-xl text-iftar-navy/80 max-w-2xl mx-auto mb-6 opacity-0 animate-slideUp" style={{ animationDelay: '0.9s' }}>
+        <p className="text-base md:text-lg text-iftar-navy/80 max-w-2xl mx-auto mb-4 md:mb-6 opacity-0 animate-slideUp" style={{ animationDelay: '0.9s' }}>
           Join us for an evening of connection, reflection, and celebration as we break fast together at the Cheyavoor Office.
         </p>
         
-        <p className="text-lg italic text-iftar-gold font-medium mb-10 opacity-0 animate-slideUp" style={{ animationDelay: '0.9s' }}>
-          Where the only thing we're debugging is our hunger!
+        <p className="text-base md:text-lg italic text-iftar-gold font-medium mb-6 md:mb-10 opacity-0 animate-slideUp" style={{ animationDelay: '0.9s' }}>
+          Where the only thing we're debugging is our hunger! <br/>
+          <span className="text-sm md:text-base">And our interns' code, but that's a never-ending task...</span>
         </p>
         
-        <div className="relative mx-auto mb-10 w-64 h-64 opacity-0 animate-slideUp" style={{ animationDelay: '1.1s' }}>
+        <div className="relative mx-auto mb-8 md:mb-10 w-48 h-48 md:w-64 md:h-64 opacity-0 animate-slideUp" style={{ animationDelay: '1.1s' }}>
           <img 
             src="https://images.unsplash.com/photo-1529564879024-c54e7c2dd0e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
             alt="Delicious iftar food spread" 
             className="w-full h-full object-cover rounded-full border-4 border-iftar-gold shadow-xl hover:scale-105 transition-transform duration-300"
           />
-          <div className="absolute -bottom-4 -right-4 bg-iftar-cream text-iftar-navy px-4 py-2 rounded-full border border-iftar-gold shadow-lg transform rotate-3 font-medium">
+          <div className="absolute -bottom-3 md:-bottom-4 -right-3 md:-right-4 bg-iftar-cream text-iftar-navy px-3 py-1 md:px-4 md:py-2 rounded-full border border-iftar-gold shadow-lg transform rotate-3 font-medium text-xs md:text-sm">
             Not actual office food 😅
+          </div>
+          <div className="absolute -top-4 md:-top-6 -left-3 md:-left-4 bg-iftar-cream text-iftar-navy px-3 py-1 md:px-4 md:py-2 rounded-full border border-iftar-gold shadow-lg transform -rotate-6 font-medium animate-float text-xs md:text-sm" style={{ animationDelay: '2s' }}>
+            But we can dream! 🤤
           </div>
         </div>
         
-        <div className="space-x-4 opacity-0 animate-slideUp" style={{ animationDelay: '1.3s' }}>
+        <div className="space-y-3 md:space-y-0 md:space-x-4 flex flex-col md:flex-row justify-center items-center opacity-0 animate-slideUp" style={{ animationDelay: '1.3s' }}>
           <Button 
             onClick={scrollToRSVP}
-            className="bg-iftar-gold hover:bg-iftar-deep-gold text-white px-8 py-6 rounded-md transition-all duration-300 transform hover:scale-105"
+            className="bg-iftar-gold hover:bg-iftar-deep-gold text-white px-6 md:px-8 py-2.5 md:py-6 rounded-md transition-all duration-300 transform hover:scale-105 w-full md:w-auto"
           >
             RSVP Now
           </Button>
           
           <Button 
             variant="outline" 
-            className="border-iftar-gold text-iftar-navy hover:bg-iftar-light-gold hover:text-iftar-navy"
+            className="border-iftar-gold text-iftar-navy hover:bg-iftar-light-gold hover:text-iftar-navy w-full md:w-auto mt-2 md:mt-0"
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Learn More
@@ -105,9 +111,9 @@ const Hero: React.FC = () => {
         </div>
       </div>
       
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator opacity-0 animate-fadeIn" style={{ animationDelay: '1.5s' }}>
-        <div className="w-8 h-12 rounded-full border-2 border-iftar-gold flex items-start justify-center p-2">
-          <div className="w-1 h-3 bg-iftar-gold rounded-full animate-pulse"></div>
+      <div className="absolute bottom-6 md:bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator opacity-0 animate-fadeIn" style={{ animationDelay: '1.5s' }}>
+        <div className="w-6 h-9 md:w-8 md:h-12 rounded-full border-2 border-iftar-gold flex items-start justify-center p-1.5 md:p-2">
+          <div className="w-1 h-2 md:h-3 bg-iftar-gold rounded-full animate-pulse"></div>
         </div>
       </div>
     </div>
