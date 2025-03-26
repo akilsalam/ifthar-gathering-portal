@@ -7,6 +7,7 @@ import ScheduleSection from '@/components/ScheduleSection';
 import LocationSection from '@/components/LocationSection';
 import RSVPSection from '@/components/RSVPSection';
 import CoordinatorsSection from '@/components/CoordinatorsSection';
+import MERNQuizSection from '@/components/MERNQuizSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -43,6 +44,7 @@ const Index = () => {
         <CoordinatorsSection />
         <LocationSection />
         <RSVPSection />
+        <MERNQuizSection />
       </main>
       <Footer />
     </div>

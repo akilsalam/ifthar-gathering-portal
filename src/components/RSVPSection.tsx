@@ -5,6 +5,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { useToast } from '@/components/ui/use-toast';
+import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
+import { XCircle } from 'lucide-react';
 
 const RSVPSection: React.FC = () => {
   const [name, setName] = useState('');
@@ -13,6 +15,7 @@ const RSVPSection: React.FC = () => {
   const [attending, setAttending] = useState('yes');
   const [dietaryRestrictions, setDietaryRestrictions] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showEligibilityMessage, setShowEligibilityMessage] = useState(false);
   const { toast } = useToast();
   
   const sectionRef = useRef<HTMLElement>(null);
@@ -55,9 +58,10 @@ const RSVPSection: React.FC = () => {
     
     // Simulate API call
     setTimeout(() => {
+      setShowEligibilityMessage(true);
       toast({
-        title: "Success!",
-        description: `Thank you for your RSVP, ${name}. We look forward to seeing you!`,
+        title: "Form Submitted",
+        description: "Please check your eligibility status below.",
       });
       
       // Reset form
@@ -67,6 +71,11 @@ const RSVPSection: React.FC = () => {
       setAttending('yes');
       setDietaryRestrictions('');
       setIsSubmitting(false);
+      
+      // Scroll to MERN quiz section after submission
+      setTimeout(() => {
+        document.getElementById('mern-quiz')?.scrollIntoView({ behavior: 'smooth' });
+      }, 1000);
     }, 1500);
   };
 
@@ -84,6 +93,16 @@ const RSVPSection: React.FC = () => {
         </div>
 
         <div className="max-w-xl mx-auto">
+          {showEligibilityMessage && (
+            <Alert variant="destructive" className="mb-6 fade-in-section">
+              <XCircle className="h-4 w-4" />
+              <AlertTitle>Not Eligible</AlertTitle>
+              <AlertDescription>
+                Sorry, it seems you're not eligible for this Ifthar! Please complete our MERN stack quiz below to prove your tech knowledge and gain entry!
+              </AlertDescription>
+            </Alert>
+          )}
+          
           <form 
             ref={formRef}
             onSubmit={handleSubmit} 
