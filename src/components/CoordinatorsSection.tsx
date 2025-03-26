@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Sparkles, Star, Code, Database, Cpu, Coffee } from 'lucide-react';
+import { Sparkles, Star, Code, Database, Cpu, Coffee, Users } from 'lucide-react';
 
 const CoordinatorsSection: React.FC = () => {
   return (
@@ -46,7 +46,7 @@ const CoordinatorsSection: React.FC = () => {
           <div className="fade-in-section coordinator-card group glass-card p-6 rounded-xl text-center flex flex-col items-center transition-all duration-300" style={{ transitionDelay: '0.2s' }}>
             <div className="relative mb-4">
               <Avatar className="h-32 w-32 border-4 border-iftar-gold">
-                <AvatarImage src="https://images.unsplash.com/photo-1607990283143-e81e7a2c9349?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Muhammed Munawwir" />
+                <AvatarImage src="/lovable-uploads/da56bf1f-2f84-4673-af01-f299db445932.png" alt="Muhammed Munawwir" />
                 <AvatarFallback className="bg-iftar-gold text-white text-2xl">MM</AvatarFallback>
               </Avatar>
               <Star className="absolute -top-2 -right-2 text-iftar-gold h-6 w-6" />
@@ -63,6 +63,27 @@ const CoordinatorsSection: React.FC = () => {
               <p className="text-xs text-iftar-navy/60 italic">
                 "My queries are fast, but not as fast as I'll be running to the food table when it's time to break fast."
               </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Team Group Photo */}
+        <div className="mt-16 mb-8 fade-in-section" style={{ transitionDelay: '0.3s' }}>
+          <div className="text-center mb-6">
+            <h4 className="text-xl font-serif font-semibold text-iftar-navy mb-2">The Technology Team</h4>
+            <p className="text-iftar-navy/70 text-sm italic">The brilliant minds behind our digital transformation</p>
+          </div>
+          <div className="relative mx-auto max-w-3xl rounded-xl overflow-hidden shadow-xl border-4 border-iftar-gold">
+            <img 
+              src="/lovable-uploads/0f67d32b-aa18-493c-9408-5f0d35779f5f.png" 
+              alt="Technology Team" 
+              className="w-full object-cover"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-iftar-navy/80 to-transparent p-4">
+              <div className="flex items-center justify-center gap-2">
+                <Users className="h-5 w-5 text-white" />
+                <p className="text-white font-medium">Technology Department • Ifthar 2025</p>
+              </div>
             </div>
           </div>
         </div>

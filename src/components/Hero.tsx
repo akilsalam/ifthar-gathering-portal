@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { Calendar, UtensilsCrossed, Pizza, Coffee, Drumstick, Laugh } from 'lucide-react';
+import { Calendar, UtensilsCrossed, Pizza, Coffee, Drumstick, Laugh, Users } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -74,22 +74,23 @@ const Hero: React.FC = () => {
           Join us for an evening of connection, reflection, and celebration as we break fast together at the Cheyavoor Office.
         </p>
         
-        <p className="text-base md:text-lg italic text-iftar-gold font-medium mb-6 md:mb-10 opacity-0 animate-slideUp" style={{ animationDelay: '0.9s' }}>
+        <p className="text-base md:text-lg italic text-iftar-gold font-medium mb-6 md:mb-8 opacity-0 animate-slideUp" style={{ animationDelay: '0.9s' }}>
           Where the only thing we're debugging is our hunger! <br/>
           <span className="text-sm md:text-base">And our interns' code, but that's a never-ending task...</span>
         </p>
         
-        <div className="relative mx-auto mb-8 md:mb-10 w-48 h-48 md:w-64 md:h-64 opacity-0 animate-slideUp" style={{ animationDelay: '1.1s' }}>
+        {/* Team Group Photo - Featured prominently in the center */}
+        <div className="relative mx-auto mb-10 max-w-3xl rounded-xl overflow-hidden border-4 border-iftar-gold shadow-xl opacity-0 animate-slideUp" style={{ animationDelay: '1.1s' }}>
           <img 
-            src="https://images.unsplash.com/photo-1529564879024-c54e7c2dd0e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
-            alt="Delicious iftar food spread" 
-            className="w-full h-full object-cover rounded-full border-4 border-iftar-gold shadow-xl hover:scale-105 transition-transform duration-300"
+            src="/lovable-uploads/0f67d32b-aa18-493c-9408-5f0d35779f5f.png" 
+            alt="Technology Team" 
+            className="w-full object-cover"
           />
-          <div className="absolute -bottom-3 md:-bottom-4 -right-3 md:-right-4 bg-iftar-cream text-iftar-navy px-3 py-1 md:px-4 md:py-2 rounded-full border border-iftar-gold shadow-lg transform rotate-3 font-medium text-xs md:text-sm">
-            Not actual office food 😅
-          </div>
-          <div className="absolute -top-4 md:-top-6 -left-3 md:-left-4 bg-iftar-cream text-iftar-navy px-3 py-1 md:px-4 md:py-2 rounded-full border border-iftar-gold shadow-lg transform -rotate-6 font-medium animate-float text-xs md:text-sm" style={{ animationDelay: '2s' }}>
-            But we can dream! 🤤
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-iftar-navy/80 to-transparent py-3 px-4">
+            <div className="flex items-center justify-center gap-2">
+              <Users className="h-4 w-4 text-white" />
+              <p className="text-white text-sm font-medium">Your hosts for the evening</p>
+            </div>
           </div>
         </div>
         
