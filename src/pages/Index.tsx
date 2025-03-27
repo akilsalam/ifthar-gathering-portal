@@ -5,9 +5,8 @@ import Hero from '@/components/Hero';
 import AboutSection from '@/components/AboutSection';
 import ScheduleSection from '@/components/ScheduleSection';
 import LocationSection from '@/components/LocationSection';
-import RSVPSection from '@/components/RSVPSection';
 import CoordinatorsSection from '@/components/CoordinatorsSection';
-import MERNQuizSection from '@/components/MERNQuizSection';
+import MemoriesSection from '@/components/MemoriesSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -52,11 +51,10 @@ const Index = () => {
       <main>
         <Hero />
         <AboutSection />
+        <MemoriesSection />
         <ScheduleSection />
         <CoordinatorsSection />
         <LocationSection />
-        <RSVPSection />
-        <MERNQuizSection />
       </main>
       <Footer />
     </div>

@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { Calendar, UtensilsCrossed, Pizza, Coffee, Drumstick, Laugh, Users } from 'lucide-react';
+import { Calendar, UtensilsCrossed, Pizza, Coffee, Drumstick, Laugh, Users, Check } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -28,8 +28,8 @@ const Hero: React.FC = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const scrollToRSVP = () => {
-    const element = document.getElementById('rsvp');
+  const scrollToMemories = () => {
+    const element = document.getElementById('memories');
     if (element) {
       window.scrollTo({
         behavior: 'smooth',
@@ -61,7 +61,9 @@ const Hero: React.FC = () => {
         <div className="mb-6 md:mb-8 inline-block opacity-0 animate-slideUp" style={{ animationDelay: '0.3s' }}>
           <span className="px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-iftar-cream border border-iftar-gold/30 text-iftar-navy inline-flex items-center text-xs md:text-sm font-medium">
             <Calendar className="w-3 h-3 md:w-4 md:h-4 mr-1.5 md:mr-2 text-iftar-gold" />
-            <time dateTime="2025-03-26">March 26, 2025</time>
+            <time dateTime="2023-03-26">March 26, 2023</time>
+            <Check className="w-3 h-3 md:w-4 md:h-4 ml-1.5 md:ml-2 text-green-600" />
+            <span className="text-green-600 ml-1">Completed</span>
           </span>
         </div>
         
@@ -71,35 +73,35 @@ const Hero: React.FC = () => {
         </h1>
         
         <p className="text-base md:text-lg text-iftar-navy/80 max-w-2xl mx-auto mb-4 md:mb-6 opacity-0 animate-slideUp" style={{ animationDelay: '0.9s' }}>
-          Join us for an evening of connection, reflection, and celebration as we break fast together at the Cheyavoor Office.
+          The Ifthar gathering was a beautiful evening of connection, reflection, and celebration as we broke fast together at the Cheyavoor Office.
         </p>
         
         <p className="text-base md:text-lg italic text-iftar-gold font-medium mb-6 md:mb-8 opacity-0 animate-slideUp" style={{ animationDelay: '0.9s' }}>
-          Where the only thing we're debugging is our hunger! <br/>
-          <span className="text-sm md:text-base">And our interns' code, but that's a never-ending task...</span>
+          We not only debugged our hunger, but also strengthened our team bonds! <br/>
+          <span className="text-sm md:text-base">Thank you to everyone who joined and made it a memorable evening.</span>
         </p>
         
         {/* Team Group Photo - Featured prominently in the center */}
         <div className="relative mx-auto mb-10 max-w-3xl rounded-xl overflow-hidden border-4 border-iftar-gold shadow-xl opacity-0 animate-slideUp" style={{ animationDelay: '1.1s' }}>
           <img 
-            src="/lovable-uploads/0f67d32b-aa18-493c-9408-5f0d35779f5f.png" 
-            alt="Technology Team" 
+            src="/lovable-uploads/b4d5b7c8-7b7d-4c34-ba4d-cd1b84e91e6d.png" 
+            alt="Technology Team Group Photo" 
             className="w-full object-cover"
           />
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-iftar-navy/80 to-transparent py-3 px-4">
             <div className="flex items-center justify-center gap-2">
               <Users className="h-4 w-4 text-white" />
-              <p className="text-white text-sm font-medium">Your hosts for the evening</p>
+              <p className="text-white text-sm font-medium">The Technology Team</p>
             </div>
           </div>
         </div>
         
         <div className="space-y-3 md:space-y-0 md:space-x-4 flex flex-col md:flex-row justify-center items-center opacity-0 animate-slideUp" style={{ animationDelay: '1.3s' }}>
           <Button 
-            onClick={scrollToRSVP}
+            onClick={scrollToMemories}
             className="bg-iftar-gold hover:bg-iftar-deep-gold text-white px-6 md:px-8 py-2.5 md:py-6 rounded-md transition-all duration-300 transform hover:scale-105 w-full md:w-auto"
           >
-            RSVP Now
+            View Memories
           </Button>
           
           <Button 

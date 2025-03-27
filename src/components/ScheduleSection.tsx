@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
+import { CheckCircle } from 'lucide-react';
 
 interface ScheduleItem {
   time: string;
@@ -88,13 +89,17 @@ const ScheduleSection: React.FC = () => {
       className="py-20 px-6 bg-iftar-cream"
     >
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center mb-16 fade-in-section">
-          <h2 className="text-sm font-medium text-iftar-gold mb-4 uppercase tracking-wider">Event Timeline</h2>
+        <div className="text-center mb-8 md:mb-16 fade-in-section">
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-green-100 rounded-full text-green-700 mb-6">
+            <CheckCircle className="h-4 w-4" />
+            <span className="text-sm font-medium">Event Completed</span>
+          </div>
+          <h2 className="text-sm font-medium text-iftar-gold mb-4 uppercase tracking-wider">How We Spent Our Evening</h2>
           <h3 className="text-3xl md:text-4xl font-serif font-semibold mb-6 text-iftar-navy">
             Schedule of the Evening
           </h3>
           <p className="text-iftar-navy/80 max-w-2xl mx-auto">
-            Here's what you can expect during our Ifthar gathering. The event is designed to provide a meaningful experience for all participants.
+            Here's how we spent our meaningful Ifthar gathering. The event provided a wonderful experience for all participants.
           </p>
         </div>
 
@@ -113,8 +118,10 @@ const ScheduleSection: React.FC = () => {
                 )}
                 style={{ transitionDelay: `${index * 0.1}s` }}
               >
-                {/* Timeline dot */}
-                <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-iftar-gold rounded-full border-4 border-iftar-cream z-10"></div>
+                {/* Timeline dot with check mark */}
+                <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-5 h-5 bg-green-100 rounded-full border-4 border-iftar-cream z-10 flex items-center justify-center">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                </div>
                 
                 {/* Content depends on even/odd positioning */}
                 <div className={cn(
