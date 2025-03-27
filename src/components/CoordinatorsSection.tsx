@@ -75,7 +75,7 @@ const CoordinatorsSection: React.FC = () => {
           </div>
           <div className="relative mx-auto max-w-3xl rounded-xl overflow-hidden shadow-xl border-4 border-iftar-gold">
             <img 
-              src="/lovable-uploads/0f67d32b-aa18-493c-9408-5f0d35779f5f.png" 
+              src="/lovable-uploads/26ac864a-6c40-4056-81b6-6bdec9910905.png" 
               alt="Technology Team" 
               className="w-full object-cover"
             />

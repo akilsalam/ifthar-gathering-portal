@@ -36,14 +36,14 @@ const MemoriesSection: React.FC = () => {
     },
     {
       id: 2,
-      image: "/lovable-uploads/0f67d32b-aa18-493c-9408-5f0d35779f5f.png",
+      image: "/lovable-uploads/26ac864a-6c40-4056-81b6-6bdec9910905.png",
       title: "Team Gathering",
       description: "The technology team gathering for the Ifthar event",
       icon: <Users className="h-5 w-5 text-iftar-gold" />
     },
     {
       id: 3,
-      image: "/lovable-uploads/b4d5b7c8-7b7d-4c34-ba4d-cd1b84e91e6d.png",
+      image: "/lovable-uploads/26ac864a-6c40-4056-81b6-6bdec9910905.png",
       title: "Official Team Photo",
       description: "The technology team posing for the official photo",
       icon: <Heart className="h-5 w-5 text-iftar-gold" />
@@ -101,7 +101,7 @@ const MemoriesSection: React.FC = () => {
         <div className="mb-12 fade-in-section">
           <div className="relative rounded-xl overflow-hidden border-2 border-iftar-gold/30 shadow-xl">
             <img 
-              src="/lovable-uploads/0f67d32b-aa18-493c-9408-5f0d35779f5f.png" 
+              src="/lovable-uploads/26ac864a-6c40-4056-81b6-6bdec9910905.png" 
               alt="Technology Team Group Photo" 
               className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover"
             />

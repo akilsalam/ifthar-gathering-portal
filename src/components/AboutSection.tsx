@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Smile, Clock, Utensils, PartyPopper, CakeSlice, Code, Bug, Coffee } from 'lucide-react';
+import { Utensils, Coffee, Pizza, Laugh, Scissors, Lightbulb, Apple, Users } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -34,23 +34,23 @@ const AboutSection: React.FC = () => {
             <div className="fade-in-section">
               <h2 className="text-sm font-medium text-iftar-gold mb-4 uppercase tracking-wider">About the Event</h2>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold mb-4 md:mb-6 text-iftar-navy">
-                Celebrate Ramadan <br />with Your Colleagues
+                Food Preparation & <br />Teamwork
               </h3>
               <p className="text-iftar-navy/80 mb-4 md:mb-6 text-sm md:text-base">
-                Our annual Technology Department Ifthar gathering is a special time to come together as a team, share a meal, and strengthen our bonds. This year's event will feature traditional foods, meaningful conversation, and an opportunity to connect outside of our daily work environment.
+                Our Ifthar gathering was made special not just by the celebration itself, but by the collaborative preparation that went into it. As a team, we brought fruits, snacks, and tea from the office, working together to transform our everyday workspace into a festive environment.
               </p>
               <p className="text-iftar-navy/80 mb-4 md:mb-6 text-sm md:text-base">
-                Whether you observe Ramadan or not, all team members are warmly invited to participate in this cultural celebration. It's a wonderful opportunity to learn from one another and celebrate the diversity within our department.
+                Together, we made fresh juice, cut and arranged fruits on serving platters, and decorated our technology department room with colorful lights. The preparation process was as meaningful as the celebration itself, allowing us to bond and work together in a new way.
               </p>
               <div className="bg-iftar-cream rounded-lg p-3 md:p-4 border-l-4 border-iftar-gold mb-4 md:mb-6">
                 <p className="text-iftar-navy/80 italic text-xs md:text-sm">
-                  <span className="font-semibold">Note:</span> We've tested the Wi-Fi near the food tables, and it's strong enough to post food pictures before it gets cold! #PrioritiesInOrder
+                  <span className="font-semibold">Note:</span> It turns out our backend developers are just as precise with fruit cutting as they are with code optimization! #PerfectionistCoders
                 </p>
               </div>
               <div className="bg-iftar-light-gold rounded-lg p-3 md:p-4 border-l-4 border-iftar-gold">
                 <p className="text-iftar-navy/80 italic text-xs md:text-sm flex items-center">
-                  <Bug className="w-4 h-4 mr-2 text-iftar-gold flex-shrink-0" />
-                  <span className="font-semibold">Warning:</span> Our backend developers will be in attendance, so please avoid asking them to fix your personal devices. They're off-duty and only responding to food-related queries.
+                  <Laugh className="w-4 h-4 mr-2 text-iftar-gold flex-shrink-0" />
+                  <span className="font-semibold">Fun fact:</span> Our tech team now jokingly refers to our snack arrangements as "well-designed user interfaces" and our fruit platters as "visually appealing front-end development."
                 </p>
               </div>
             </div>
@@ -64,41 +64,41 @@ const AboutSection: React.FC = () => {
                 className="w-full h-40 md:h-48 object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-iftar-navy/80 to-transparent p-3 md:p-4">
-                <p className="text-white text-xs md:text-sm font-medium">Last year's event (with 30% more laughter expected this year)</p>
+                <p className="text-white text-xs md:text-sm font-medium">Our tech team enjoying the fruits of their labor (literally!)</p>
               </div>
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="glass-card p-4 md:p-5 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                 <div className="mb-3 text-iftar-gold">
-                  <Smile className="w-6 h-6 md:w-8 md:h-8" />
+                  <Apple className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
-                <h4 className="text-base md:text-lg font-semibold text-iftar-navy mb-2">Connection</h4>
-                <p className="text-xs md:text-sm text-iftar-navy/70">Build stronger relationships with colleagues in a relaxed setting where talking about JavaScript is temporarily banned.</p>
-              </div>
-              
-              <div className="glass-card p-4 md:p-5 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                <div className="mb-3 text-iftar-gold">
-                  <Clock className="w-6 h-6 md:w-8 md:h-8" />
-                </div>
-                <h4 className="text-base md:text-lg font-semibold text-iftar-navy mb-2">Reflection</h4>
-                <p className="text-xs md:text-sm text-iftar-navy/70">Take time to pause and appreciate our community - and how much better we cook than we code.</p>
-              </div>
-              
-              <div className="glass-card p-4 md:p-5 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                <div className="mb-3 text-iftar-gold">
-                  <Utensils className="w-6 h-6 md:w-8 md:h-8" />
-                </div>
-                <h4 className="text-base md:text-lg font-semibold text-iftar-navy mb-2">Tradition</h4>
-                <p className="text-xs md:text-sm text-iftar-navy/70">Experience the cultural significance of breaking fast together - we promise no one will judge your serving size.</p>
+                <h4 className="text-base md:text-lg font-semibold text-iftar-navy mb-2">Fruit Preparation</h4>
+                <p className="text-xs md:text-sm text-iftar-navy/70">Our team worked together to cut and arrange fruits on platters, turning simple ingredients into beautiful displays.</p>
               </div>
               
               <div className="glass-card p-4 md:p-5 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                 <div className="mb-3 text-iftar-gold">
                   <Coffee className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
-                <h4 className="text-base md:text-lg font-semibold text-iftar-navy mb-2">Caffeination</h4>
-                <p className="text-xs md:text-sm text-iftar-navy/70">The only time our dev team runs faster than when the coffee machine is refilled is when the buffet opens.</p>
+                <h4 className="text-base md:text-lg font-semibold text-iftar-navy mb-2">Fresh Beverages</h4>
+                <p className="text-xs md:text-sm text-iftar-navy/70">We made fresh juice together in the office, with team members taking turns to prepare the perfect drinks.</p>
+              </div>
+              
+              <div className="glass-card p-4 md:p-5 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <div className="mb-3 text-iftar-gold">
+                  <Lightbulb className="w-6 h-6 md:w-8 md:h-8" />
+                </div>
+                <h4 className="text-base md:text-lg font-semibold text-iftar-navy mb-2">Colorful Decorations</h4>
+                <p className="text-xs md:text-sm text-iftar-navy/70">Our tech department was transformed with colorful lights and decorations, creating a warm and festive atmosphere.</p>
+              </div>
+              
+              <div className="glass-card p-4 md:p-5 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <div className="mb-3 text-iftar-gold">
+                  <Users className="w-6 h-6 md:w-8 md:h-8" />
+                </div>
+                <h4 className="text-base md:text-lg font-semibold text-iftar-navy mb-2">Team Service</h4>
+                <p className="text-xs md:text-sm text-iftar-navy/70">Everyone pitched in to serve the food, demonstrating that our collaboration extends beyond coding projects.</p>
               </div>
             </div>
           </div>

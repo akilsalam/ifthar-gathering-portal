@@ -1,50 +1,43 @@
 
 import React, { useRef, useEffect } from 'react';
-import { Coffee, Heart, Clock, Smile, MessageCircle, Users } from 'lucide-react';
+import { Coffee, Heart, Clock, Smile, MessageCircle, Users, Utensils, Camera } from 'lucide-react';
 
 interface MemoryHighlight {
   title: string;
   description: string;
-  time: string;
   icon: React.ReactNode;
 }
 
 const memoryHighlights: MemoryHighlight[] = [
   {
-    time: "5:30 PM",
-    title: "Arrival & Welcome",
-    description: "Colleagues arrived and were greeted with warm smiles and excitement",
+    title: "Team Gathering",
+    description: "Our team members came together, excited to share this special evening with each other",
     icon: <Users className="h-5 w-5 text-iftar-gold" />
   },
   {
-    time: "6:15 PM",
-    title: "Meaningful Conversations",
-    description: "Sharing stories and strengthening our bonds as a team",
-    icon: <MessageCircle className="h-5 w-5 text-iftar-gold" />
+    title: "Food Preparation",
+    description: "Working together to cut fruits, arrange platters, and prepare fresh juice for everyone",
+    icon: <Utensils className="h-5 w-5 text-iftar-gold" />
   },
   {
-    time: "7:00 PM",
+    title: "Room Decoration",
+    description: "Setting up colorful lights and decorations to create a festive atmosphere in our department",
+    icon: <Heart className="h-5 w-5 text-iftar-gold" />
+  },
+  {
     title: "Breaking Fast Together",
-    description: "The beautiful moment when we all shared in breaking the fast",
+    description: "The beautiful moment when we all shared in breaking the fast as a team",
     icon: <Clock className="h-5 w-5 text-iftar-gold" />
   },
   {
-    time: "7:30 PM",
-    title: "Laughter & Joy",
-    description: "The dining area filled with smiles and friendly conversations",
-    icon: <Smile className="h-5 w-5 text-iftar-gold" />
+    title: "Meaningful Conversations",
+    description: "Connecting beyond work discussions and strengthening our bonds as colleagues",
+    icon: <MessageCircle className="h-5 w-5 text-iftar-gold" />
   },
   {
-    time: "8:15 PM",
-    title: "Coffee & Sweets",
-    description: "Enjoying a selection of desserts and Arabic coffee together",
-    icon: <Coffee className="h-5 w-5 text-iftar-gold" />
-  },
-  {
-    time: "9:00 PM",
-    title: "Heartfelt Goodbyes",
-    description: "Parting with warm hearts and new memories to cherish",
-    icon: <Heart className="h-5 w-5 text-iftar-gold" />
+    title: "Capturing Moments",
+    description: "Taking photos together to preserve the memories of our special gathering",
+    icon: <Camera className="h-5 w-5 text-iftar-gold" />
   }
 ];
 
@@ -91,12 +84,12 @@ const ScheduleSection: React.FC = () => {
     >
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-12 md:mb-16 fade-in-section">
-          <h2 className="text-sm font-medium text-iftar-gold mb-4 uppercase tracking-wider">How Our Evening Unfolded</h2>
+          <h2 className="text-sm font-medium text-iftar-gold mb-4 uppercase tracking-wider">Our Ifthar Experience</h2>
           <h3 className="text-3xl md:text-4xl font-serif font-semibold mb-6 text-iftar-navy">
-            Highlights of Our Evening
+            Highlights from Our Gathering
           </h3>
           <p className="text-iftar-navy/80 max-w-2xl mx-auto">
-            Relive the flow of our memorable Ifthar gathering through these special moments that made the evening magical.
+            From preparation to celebration, our Ifthar gathering was filled with special moments that brought our team closer together.
           </p>
         </div>
 
@@ -113,7 +106,6 @@ const ScheduleSection: React.FC = () => {
                   {highlight.icon}
                 </div>
                 <div>
-                  <span className="text-iftar-gold font-medium text-sm block mb-1">{highlight.time}</span>
                   <h4 className="text-lg font-semibold text-iftar-navy mb-2">{highlight.title}</h4>
                   <p className="text-sm text-iftar-navy/70">{highlight.description}</p>
                 </div>
@@ -126,7 +118,7 @@ const ScheduleSection: React.FC = () => {
           <div className="inline-block p-8 glass-card rounded-xl border border-iftar-gold/20 max-w-2xl">
             <h4 className="text-xl font-medium text-iftar-navy mb-4">An Evening to Remember</h4>
             <p className="text-iftar-navy/80">
-              "The most beautiful moments in life are the ones we share with others. Our Ifthar gathering was filled with such moments - from breaking bread together to sharing stories and laughter. These memories will stay with us long after the event."
+              "The most beautiful moments in life are the ones we share with others. Our Ifthar gathering was filled with such moments - from preparing the food together to sharing stories and laughter. These memories will stay with us long after the event."
             </p>
             <div className="mt-4 flex items-center justify-center">
               <div className="p-2 bg-iftar-light-gold rounded-full">

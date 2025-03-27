@@ -82,7 +82,7 @@ const Hero: React.FC = () => {
         {/* Team Group Photo - Updated with new photo */}
         <div className="relative mx-auto mb-10 max-w-3xl rounded-xl overflow-hidden border-4 border-iftar-gold shadow-xl opacity-0 animate-slideUp" style={{ animationDelay: '1.1s' }}>
           <img 
-            src="/lovable-uploads/0f67d32b-aa18-493c-9408-5f0d35779f5f.png" 
+            src="/lovable-uploads/26ac864a-6c40-4056-81b6-6bdec9910905.png" 
             alt="Technology Team Group Photo" 
             className="w-full object-cover"
           />
