@@ -67,7 +67,7 @@ const CoordinatorsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Team Group Photo */}
+        {/* Team Group Photo - Updated with new photo */}
         <div className="mt-16 mb-8 fade-in-section" style={{ transitionDelay: '0.3s' }}>
           <div className="text-center mb-6">
             <h4 className="text-xl font-serif font-semibold text-iftar-navy mb-2">The Technology Team</h4>
@@ -96,11 +96,11 @@ const CoordinatorsSection: React.FC = () => {
           </div>
           <div className="coordinator-quote text-center">
             <p className="text-iftar-navy/80 text-lg italic font-serif max-w-2xl mx-auto">
-              "We promise the food will have fewer bugs than our code. Come hungry, leave with full stomachs and fewer merge conflicts!"
+              "We promise the food had fewer bugs than our code. We came hungry and left with full stomachs and fewer merge conflicts!"
             </p>
             <div className="mt-6 flex items-center justify-center gap-3">
               <Cpu className="w-5 h-5 text-iftar-gold animate-pulse" />
-              <p className="text-sm text-iftar-navy/70 italic">Tech Department Interns, who spend more time deciding on dinner than debugging.</p>
+              <p className="text-sm text-iftar-navy/70 italic">Tech Department Interns, who spent more time enjoying dinner than debugging.</p>
             </div>
           </div>
         </div>

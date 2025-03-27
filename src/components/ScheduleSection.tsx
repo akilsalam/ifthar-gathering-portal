@@ -1,55 +1,56 @@
 
-import React, { useEffect, useRef } from 'react';
-import { cn } from '@/lib/utils';
-import { CheckCircle } from 'lucide-react';
+import React, { useRef, useEffect } from 'react';
+import { Coffee, Heart, Clock, Smile, MessageCircle, Users } from 'lucide-react';
 
-interface ScheduleItem {
-  time: string;
+interface MemoryHighlight {
   title: string;
   description: string;
+  time: string;
+  icon: React.ReactNode;
 }
 
-const scheduleItems: ScheduleItem[] = [
+const memoryHighlights: MemoryHighlight[] = [
   {
     time: "5:30 PM",
     title: "Arrival & Welcome",
-    description: "Check-in and mingle with colleagues"
-  },
-  {
-    time: "6:00 PM",
-    title: "Opening Remarks",
-    description: "Brief welcome from the Technology Department Head"
+    description: "Colleagues arrived and were greeted with warm smiles and excitement",
+    icon: <Users className="h-5 w-5 text-iftar-gold" />
   },
   {
     time: "6:15 PM",
-    title: "Pre-Iftar Talk",
-    description: "Short discussion on the significance of Ramadan"
-  },
-  {
-    time: "6:45 PM",
-    title: "Maghrib Prayer",
-    description: "Optional prayer time (prayer room available)"
+    title: "Meaningful Conversations",
+    description: "Sharing stories and strengthening our bonds as a team",
+    icon: <MessageCircle className="h-5 w-5 text-iftar-gold" />
   },
   {
     time: "7:00 PM",
-    title: "Iftar (Breaking Fast)",
-    description: "Enjoy a delicious meal with colleagues"
+    title: "Breaking Fast Together",
+    description: "The beautiful moment when we all shared in breaking the fast",
+    icon: <Clock className="h-5 w-5 text-iftar-gold" />
   },
   {
-    time: "8:00 PM",
-    title: "Networking & Social Time",
-    description: "Connect with team members in a relaxed atmosphere"
+    time: "7:30 PM",
+    title: "Laughter & Joy",
+    description: "The dining area filled with smiles and friendly conversations",
+    icon: <Smile className="h-5 w-5 text-iftar-gold" />
+  },
+  {
+    time: "8:15 PM",
+    title: "Coffee & Sweets",
+    description: "Enjoying a selection of desserts and Arabic coffee together",
+    icon: <Coffee className="h-5 w-5 text-iftar-gold" />
   },
   {
     time: "9:00 PM",
-    title: "Closing Remarks",
-    description: "Thank you and farewell"
+    title: "Heartfelt Goodbyes",
+    description: "Parting with warm hearts and new memories to cherish",
+    icon: <Heart className="h-5 w-5 text-iftar-gold" />
   }
 ];
 
 const ScheduleSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const itemsRef = useRef<(HTMLLIElement | null)[]>([]);
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -67,8 +68,8 @@ const ScheduleSection: React.FC = () => {
       observer.observe(sectionRef.current);
     }
 
-    itemsRef.current.forEach((item) => {
-      if (item) observer.observe(item);
+    cardsRef.current.forEach((card) => {
+      if (card) observer.observe(card);
     });
 
     return () => {
@@ -76,8 +77,8 @@ const ScheduleSection: React.FC = () => {
         observer.unobserve(sectionRef.current);
       }
       
-      itemsRef.current.forEach((item) => {
-        if (item) observer.unobserve(item);
+      cardsRef.current.forEach((card) => {
+        if (card) observer.unobserve(card);
       });
     };
   }, []);
@@ -89,60 +90,50 @@ const ScheduleSection: React.FC = () => {
       className="py-20 px-6 bg-iftar-cream"
     >
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center mb-8 md:mb-16 fade-in-section">
-          <div className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-green-100 rounded-full text-green-700 mb-6">
-            <CheckCircle className="h-4 w-4" />
-            <span className="text-sm font-medium">Event Completed</span>
-          </div>
-          <h2 className="text-sm font-medium text-iftar-gold mb-4 uppercase tracking-wider">How We Spent Our Evening</h2>
+        <div className="text-center mb-12 md:mb-16 fade-in-section">
+          <h2 className="text-sm font-medium text-iftar-gold mb-4 uppercase tracking-wider">How Our Evening Unfolded</h2>
           <h3 className="text-3xl md:text-4xl font-serif font-semibold mb-6 text-iftar-navy">
-            Schedule of the Evening
+            Highlights of Our Evening
           </h3>
           <p className="text-iftar-navy/80 max-w-2xl mx-auto">
-            Here's how we spent our meaningful Ifthar gathering. The event provided a wonderful experience for all participants.
+            Relive the flow of our memorable Ifthar gathering through these special moments that made the evening magical.
           </p>
         </div>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 h-full w-px bg-iftar-gold/30"></div>
-          
-          <ul className="space-y-10 relative">
-            {scheduleItems.map((item, index) => (
-              <li 
-                key={index}
-                ref={el => itemsRef.current[index] = el}
-                className={cn(
-                  "relative grid grid-cols-1 md:grid-cols-2 gap-8 fade-in-section",
-                  index % 2 === 0 ? "md:text-right" : "md:flex-row-reverse"
-                )}
-                style={{ transitionDelay: `${index * 0.1}s` }}
-              >
-                {/* Timeline dot with check mark */}
-                <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-5 h-5 bg-green-100 rounded-full border-4 border-iftar-cream z-10 flex items-center justify-center">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {memoryHighlights.map((highlight, index) => (
+            <div 
+              key={index}
+              ref={el => cardsRef.current[index] = el}
+              className="fade-in-section glass-card p-6 rounded-xl border border-iftar-gold/20 transition-all duration-300 hover:shadow-lg hover:border-iftar-gold/30"
+              style={{ transitionDelay: `${index * 0.1}s` }}
+            >
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 p-3 bg-iftar-light-gold rounded-full">
+                  {highlight.icon}
                 </div>
-                
-                {/* Content depends on even/odd positioning */}
-                <div className={cn(
-                  "md:pr-12",
-                  index % 2 !== 0 && "md:col-start-2"
-                )}>
-                  <div className={cn(
-                    "glass-card p-6 rounded-xl transition-all duration-300 hover:shadow-lg",
-                    index % 2 === 0 ? "md:mr-10" : "md:ml-10"
-                  )}>
-                    <span className="text-iftar-gold font-medium block mb-2">{item.time}</span>
-                    <h4 className="text-xl font-semibold text-iftar-navy mb-2">{item.title}</h4>
-                    <p className="text-sm text-iftar-navy/70">{item.description}</p>
-                  </div>
+                <div>
+                  <span className="text-iftar-gold font-medium text-sm block mb-1">{highlight.time}</span>
+                  <h4 className="text-lg font-semibold text-iftar-navy mb-2">{highlight.title}</h4>
+                  <p className="text-sm text-iftar-navy/70">{highlight.description}</p>
                 </div>
-                
-                {/* Empty div for layout on mobile / alternating on desktop */}
-                <div className={index % 2 === 0 ? "md:col-start-2" : "md:col-start-1"}></div>
-              </li>
-            ))}
-          </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16 text-center fade-in-section">
+          <div className="inline-block p-8 glass-card rounded-xl border border-iftar-gold/20 max-w-2xl">
+            <h4 className="text-xl font-medium text-iftar-navy mb-4">An Evening to Remember</h4>
+            <p className="text-iftar-navy/80">
+              "The most beautiful moments in life are the ones we share with others. Our Ifthar gathering was filled with such moments - from breaking bread together to sharing stories and laughter. These memories will stay with us long after the event."
+            </p>
+            <div className="mt-4 flex items-center justify-center">
+              <div className="p-2 bg-iftar-light-gold rounded-full">
+                <Heart className="h-5 w-5 text-iftar-deep-gold" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

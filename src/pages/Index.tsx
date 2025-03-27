@@ -50,10 +50,10 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <AboutSection />
         <MemoriesSection />
-        <ScheduleSection />
+        <AboutSection />
         <CoordinatorsSection />
+        <ScheduleSection />
         <LocationSection />
       </main>
       <Footer />
