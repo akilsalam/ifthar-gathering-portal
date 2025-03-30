@@ -40,7 +40,6 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onNavigate }) => {
           <NavButton onClick={() => handleNavigation('about')}>About</NavButton>
           <NavButton onClick={() => handleNavigation('schedule')}>Schedule</NavButton>
           <NavButton onClick={() => handleNavigation('coordinators')}>Team</NavButton>
-          <NavButton onClick={() => handleNavigation('location')}>Location</NavButton>
           <NavButton onClick={() => handleNavigation('mern-quiz')}>MERN Quiz</NavButton>
           <Button 
             onClick={() => handleNavigation('rsvp')} 
