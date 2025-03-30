@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
           </h3>
           
           <p className="text-white/60 text-sm text-center max-w-lg mb-6">
-            Join us for an evening of community, reflection, and celebration as we break fast together at the Technology Department Ifthar.
+            The Technology Department Ifthar program has been successfully completed! Thank you for joining us for an evening of community, reflection, and celebration.
           </p>
           
           <div className="flex items-center justify-center text-xs text-white/40 mb-2">
