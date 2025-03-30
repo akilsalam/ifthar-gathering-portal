@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { MapPin, Clock, CalendarDays, Phone, Map, Navigation } from 'lucide-react';
+import { MapPin, Clock, CalendarDays, Map, Navigation, CheckCircle } from 'lucide-react';
 
 const LocationSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -35,8 +35,13 @@ const LocationSection: React.FC = () => {
           <div ref={leftColRef} className="fade-in-section">
             <h2 className="text-sm font-medium text-iftar-gold mb-4 uppercase tracking-wider">Event Details</h2>
             <h3 className="text-3xl md:text-4xl font-serif font-semibold mb-8 text-iftar-navy">
-              When & Where
+              When & Where <span className="text-iftar-gold">(Completed)</span>
             </h3>
+
+            <div className="mb-6 inline-flex items-center bg-green-50 text-green-700 px-4 py-2 rounded-lg">
+              <CheckCircle className="w-5 h-5 mr-2" />
+              <span className="text-sm font-medium">This event has already taken place</span>
+            </div>
 
             <div className="space-y-8">
               <div className="flex items-start group">
@@ -47,7 +52,7 @@ const LocationSection: React.FC = () => {
                   <h4 className="font-semibold text-iftar-navy text-lg mb-1">Date</h4>
                   <p className="text-iftar-navy/70 mb-1">Wednesday, March 26, 2025</p>
                   <p className="text-sm text-iftar-navy/60">Ramadan 1446 AH</p>
-                  <p className="text-xs text-iftar-gold mt-1 italic">Just far enough away that you can't use "I have plans" as an excuse</p>
+                  <p className="text-xs text-iftar-gold mt-1 italic">It was a wonderful gathering!</p>
                 </div>
               </div>
 
@@ -58,8 +63,8 @@ const LocationSection: React.FC = () => {
                 <div>
                   <h4 className="font-semibold text-iftar-navy text-lg mb-1">Time</h4>
                   <p className="text-iftar-navy/70 mb-1">5:30 PM - 9:00 PM</p>
-                  <p className="text-sm text-iftar-navy/60">Iftar at approximately 7:00 PM</p>
-                  <p className="text-xs text-iftar-gold mt-1 italic">The only time "fashionably late" doesn't apply</p>
+                  <p className="text-sm text-iftar-navy/60">Iftar was at approximately 7:00 PM</p>
+                  <p className="text-xs text-iftar-gold mt-1 italic">We cherished every moment together</p>
                 </div>
               </div>
 
@@ -72,19 +77,7 @@ const LocationSection: React.FC = () => {
                   <p className="text-iftar-navy/70 mb-1">Technology Department</p>
                   <p className="text-iftar-navy/70 mb-1">Cheyavoor Office</p>
                   <p className="text-sm text-iftar-navy/60">Conference Hall, 3rd Floor</p>
-                  <p className="text-xs text-iftar-gold mt-1 italic">Follow the scent of delicious food</p>
-                </div>
-              </div>
-
-              <div className="flex items-start group">
-                <div className="bg-iftar-light-gold p-3 rounded-full mr-4 transition-all duration-300 group-hover:bg-iftar-gold group-hover:text-white">
-                  <Phone className="w-6 h-6 text-iftar-gold group-hover:text-white transition-colors duration-300" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-iftar-navy text-lg mb-1">Contact</h4>
-                  <p className="text-iftar-navy/70 mb-1">Event Coordinator</p>
-                  <p className="text-sm text-iftar-navy/60">tech.events@company.com</p>
-                  <p className="text-xs text-iftar-gold mt-1 italic">We respond faster to food questions</p>
+                  <p className="text-xs text-iftar-gold mt-1 italic">The venue was beautifully decorated</p>
                 </div>
               </div>
             </div>
@@ -114,11 +107,11 @@ const LocationSection: React.FC = () => {
                   <div className="flex justify-center space-x-4">
                     <div className="flex items-center text-iftar-gold text-sm">
                       <Map className="w-4 h-4 mr-1" />
-                      <span>Get Directions</span>
+                      <span>See Location</span>
                     </div>
                     <div className="flex items-center text-iftar-gold text-sm">
                       <Navigation className="w-4 h-4 mr-1" />
-                      <span>View Map</span>
+                      <span>View Photos</span>
                     </div>
                   </div>
                 </div>
@@ -126,7 +119,7 @@ const LocationSection: React.FC = () => {
               
               {/* Funny note */}
               <div className="absolute bottom-4 right-4 bg-white rounded-lg px-3 py-2 shadow-lg transform rotate-2">
-                <p className="text-xs text-iftar-navy font-medium">Not the actual building, ours has more snack wrappers</p>
+                <p className="text-xs text-iftar-navy font-medium">This is where the magic happened!</p>
               </div>
             </div>
           </div>

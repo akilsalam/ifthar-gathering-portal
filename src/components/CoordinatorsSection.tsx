@@ -67,7 +67,7 @@ const CoordinatorsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Team Group Photo - Updated with new photo */}
+        {/* Team Group Photo - Updated with Ghibli art */}
         <div className="mt-16 mb-8 fade-in-section" style={{ transitionDelay: '0.3s' }}>
           <div className="text-center mb-6">
             <h4 className="text-xl font-serif font-semibold text-iftar-navy mb-2">The Technology Team</h4>
@@ -75,8 +75,8 @@ const CoordinatorsSection: React.FC = () => {
           </div>
           <div className="relative mx-auto max-w-3xl rounded-xl overflow-hidden shadow-xl border-4 border-iftar-gold">
             <img 
-              src="/lovable-uploads/26ac864a-6c40-4056-81b6-6bdec9910905.png" 
-              alt="Technology Team" 
+              src="/lovable-uploads/1de8a9bd-fd73-4fe3-915c-750e649a7f97.png" 
+              alt="Technology Team Ghibli Art" 
               className="w-full object-cover"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-iftar-navy/80 to-transparent p-4">
