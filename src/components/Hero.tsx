@@ -107,7 +107,7 @@ const Hero: React.FC = () => {
             className="border-iftar-gold text-iftar-navy hover:bg-iftar-light-gold hover:text-iftar-navy w-full md:w-auto mt-2 md:mt-0"
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Learn More
+            About Event
           </Button>
         </div>
       </div>

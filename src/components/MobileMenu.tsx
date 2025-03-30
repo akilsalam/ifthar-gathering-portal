@@ -38,15 +38,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onNavigate }) => {
         </SheetHeader>
         <div className="flex flex-col space-y-4">
           <NavButton onClick={() => handleNavigation('about')}>About</NavButton>
-          <NavButton onClick={() => handleNavigation('schedule')}>Schedule</NavButton>
+          <NavButton onClick={() => handleNavigation('schedule')}>Experience</NavButton>
           <NavButton onClick={() => handleNavigation('coordinators')}>Team</NavButton>
           <NavButton onClick={() => handleNavigation('mern-quiz')}>MERN Quiz</NavButton>
-          <Button 
-            onClick={() => handleNavigation('rsvp')} 
-            className="w-full mt-6 bg-iftar-gold hover:bg-iftar-deep-gold text-white"
-          >
-            RSVP Now
-          </Button>
         </div>
       </SheetContent>
     </Sheet>

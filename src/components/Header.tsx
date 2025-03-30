@@ -58,21 +58,14 @@ const Header: React.FC = () => {
             onClick={() => scrollToSection('schedule')}
             className="text-iftar-navy hover:text-iftar-gold transition-colors text-sm font-medium"
           >
-            Schedule
+            Experience
           </button>
           <button
-            onClick={() => scrollToSection('location')}
+            onClick={() => scrollToSection('coordinators')}
             className="text-iftar-navy hover:text-iftar-gold transition-colors text-sm font-medium"
           >
-            Location
+            Team
           </button>
-          <Button
-            onClick={() => scrollToSection('rsvp')}
-            variant="outline"
-            className="bg-iftar-gold text-white hover:bg-iftar-deep-gold border-none"
-          >
-            RSVP Now
-          </Button>
         </nav>
 
         {/* Mobile Menu */}

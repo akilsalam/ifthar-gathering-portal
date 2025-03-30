@@ -1,6 +1,6 @@
 
 import React, { useRef, useEffect } from 'react';
-import { Camera, Heart, Users, CalendarClock, Image, Smile, Utensils } from 'lucide-react';
+import { Camera, Heart, Users, CalendarClock, Image, Smile, Utensils, Youtube } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -95,6 +95,24 @@ const MemoriesSection: React.FC = () => {
             Relive the special moments from our technology team's Ifthar celebration. 
             An evening of connection, reflection, and celebration that brought us all closer together.
           </p>
+        </div>
+
+        {/* YouTube Video Section */}
+        <div className="mb-12 fade-in-section">
+          <div className="relative rounded-xl overflow-hidden border-2 border-iftar-gold/30 shadow-xl">
+            <div className="w-full aspect-video">
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/8STgD6UZrgo" 
+                title="Ifthar Event Memories" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen
+                className="absolute inset-0"
+              ></iframe>
+            </div>
+          </div>
+          <h4 className="text-center text-lg font-medium text-iftar-navy mt-4">Video Memories of Our Special Day</h4>
         </div>
 
         {/* Featured Image - Full Width */}
