@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
         <div className="mb-6 md:mb-8 inline-block opacity-0 animate-slideUp" style={{ animationDelay: '0.3s' }}>
           <span className="px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-iftar-cream border border-iftar-gold/30 text-iftar-navy inline-flex items-center text-xs md:text-sm font-medium">
             <Calendar className="w-3 h-3 md:w-4 md:h-4 mr-1.5 md:mr-2 text-iftar-gold" />
-            <time dateTime="2023-03-26">March 26, 2023</time>
+            <time dateTime="2023-03-26">March 26, 2025</time>
           </span>
         </div>
         
