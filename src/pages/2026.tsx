@@ -191,14 +191,17 @@ const Ifthar2026: React.FC = () => {
             </p>
 
             <div className="flex flex-col items-center gap-4">
-              <input
-                type="text"
-                placeholder="Enter phone number"
-                className="border p-3 rounded w-64 focus:outline-none focus:ring-2 focus:ring-iftar-gold/60 transition"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
-
+            <input
+  type="tel"
+  placeholder="Enter phone number"
+  className="border p-3 rounded w-64 focus:outline-none focus:ring-2 focus:ring-iftar-gold/60 transition"
+  value={phone}
+  onChange={(e) => {
+    // Only allow digits, max 10
+    const val = e.target.value.replace(/\D/g, "").slice(0, 10);
+    setPhone(val);
+  }}
+/>
               <button
                 onClick={handlePhoneSubmit}
                 className="bg-gradient-to-r from-iftar-gold to-yellow-400 text-white px-6 py-2 rounded shadow-lg hover:scale-105 hover:shadow-2xl transition-transform font-semibold text-lg"
@@ -292,7 +295,8 @@ const Ifthar2026: React.FC = () => {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
           <div className="bg-white rounded-xl shadow-2xl p-8 max-w-md text-center">
 
-            {(result === "Invited" || result === "Surprise Gift") ? (
+            {(result === "Invited" || result === "Surprise Gift") ?(
+              
               <>
                 <h2 className="text-2xl font-bold text-iftar-navy mb-4">
                   🎉 {result}
@@ -307,7 +311,7 @@ const Ifthar2026: React.FC = () => {
                 </div>
 
                 <p className="text-sm text-gray-600">
-                  “Take this code to the Teekops — we have something special for you!”
+                  “Take this code to Teekops — we have something special for you!”
                 </p>
               </>
             ) : (
@@ -328,6 +332,10 @@ const Ifthar2026: React.FC = () => {
                 setShowCard(false);
                 setPhone("");
                 setResult("");
+                window.location.reload();
+                
+                
+                
               }}
               className="mt-6 bg-iftar-gold text-white px-6 py-2 rounded hover:scale-105 transition"
             >
