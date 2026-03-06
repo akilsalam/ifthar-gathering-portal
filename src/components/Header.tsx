@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Menu } from 'lucide-react';
 import MobileMenu from './MobileMenu';
+import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,12 +41,26 @@ const Header: React.FC = () => {
         isScrolled ? 'glass-nav' : 'bg-transparent'
       )}
     >
-      <div className="container max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center">
-          <span className="text-lg md:text-xl font-serif font-semibold text-iftar-navy">
-            Ifthar <span className="gold-shimmer">2025</span>
-          </span>
-        </div>
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        
+<Link to="/" className="flex items-center">
+  <span className="text-lg md:text-xl font-serif font-semibold text-iftar-navy">
+    Ifthar <span className="gold-shimmer">2026</span>
+  </span>
+</Link>
+       <div className="flex gap-2 md:gap-4 flex-wrap md:flex-nowrap text-sm md:text-sm">
+  <span className="text-iftar-navy hover:text-iftar-gold transition-colors font-small cursor-default mt-4">
+    Previous Events
+  </span>
+
+  <Link
+    to="/index"
+    className="text-iftar-navy hover:text-iftar-gold transition-colors font-medium mt-4"
+  >
+    2025
+  </Link>
+
+</div>
         
         <nav className="hidden md:flex items-center space-x-8">
           <button
