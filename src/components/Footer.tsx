@@ -10,19 +10,19 @@ const Footer: React.FC = () => {
       <div className="container max-w-6xl mx-auto">
         <div className="flex flex-col items-center justify-center">
           <h3 className="text-xl font-serif mb-4">
-            <span className="gold-shimmer">Ifthar Gathering 2025</span>
+            <span className="gold-shimmer">Ifthar Gathering 2026</span>
           </h3>
           
-          <p className="text-white/60 text-sm text-center max-w-lg mb-6">
+          {/* <p className="text-white/60 text-sm text-center max-w-lg mb-6">
             The Technology Department Ifthar program has been successfully completed! Thank you for joining us for an evening of community, reflection, and celebration.
           </p>
-          
+           */}
           <div className="flex items-center justify-center text-xs text-white/40 mb-2">
             <span>Technology Department</span>
             <span className="mx-2">•</span>
             <span>Cheyavoor Office</span>
             <span className="mx-2">•</span>
-            <span>March 26, 2025</span>
+            <span>March 6, 2026</span>
           </div>
           
           <div className="flex items-center justify-center text-xs text-white/40">
